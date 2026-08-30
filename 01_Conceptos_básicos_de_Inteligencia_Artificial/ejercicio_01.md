@@ -17,13 +17,13 @@ Para cada una indica:
 1. **Nombre:** LLMs (chatgpt, gemini, claude) <br>
    **Usos:**
    - **Programación y arquitectura**: Desarrollo en Java, Rust, Python, C# y Flutter.
-   - **Infraestructura y hardware:** Configuración de servidores locales (Docker, NAS) y optimización de Linux (Bazzite).
+   - **Infraestructura y hardware:** Configuración de servidores locales (Docker, NAS) y optimización de Linux (Bazzite principalmente).
    - **Entretenimiento geek:** Estrategias para Magic (Commander), guías de videojuegos y recomendaciones.
-   - **Planificación personal**: Diseño de rutinas de ejercicio, itinerarios de viaje y simulacros de estudio técnico.
+   - **Planificación personal**: Diseño de rutinas de ejercicio, itinerarios de viaje y ayuda para estudiar para un examen de algebra lineal con calculo vectorial para una maestria en inteligencia artificial.
 
 2. **Nombre:** GitHub Copilot
    **Uso:** <br>
-   - Documentar, modificar codigo, crear pruebas etc.
+   - Documentar, modificar codigo, crear pruebas, evitar leer la documentacion etc.
 
 3. **Nombre:** [Poe](https://poe.com)<br>
     
