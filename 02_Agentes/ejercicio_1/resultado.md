@@ -2,7 +2,7 @@
 
 En mi mapa, yo coloque todos los elementos en el centro de manera que cualquier agente siempre pudiera percibir algo en cualquier cuadricula, excepto la inicial.
 
-![Mapa](.mapa_cargado_correctamente.png)
+![Mapa](01_cueva_carga_correctamente.png)
 
 # Resultados 
 Despues de ejecutar todos los comandos descritos en las intrucciones se obtuvieron los siguientes resultados:
