@@ -1,7 +1,3 @@
-
-   - ¿Cómo cambia el resultado del **agente basado en modelo** si acercas o alejas
-     un pit de la casilla inicial?
-
 # Introducción
 
 En mi mapa, yo coloque todos los elementos en el centro de manera que cualquier agente siempre pudiera percibir algo en cualquier cuadricula, excepto la inicial.
@@ -25,4 +21,4 @@ Despues de ejecutar todos los comandos descritos en las intrucciones se obtuvier
   - ¿Cómo cambia el resultado del **agente basado en modelo** si acercas o alejas
      un pit de la casilla inicial?
 
-  El modelo inicia su funcionamiento normal, avanza a una casilla y detecta el peligro, al hacer eso ya no agrega elementos al camino seguro y se queda sin lugares que recorrer, por lo que solo realiza su accion por default.
+  El modelo inicia su funcionamiento normal, avanza a una casilla y detecta el peligro, al hacer eso ya no agrega elementos al camino seguro y se queda sin lugares que recorrer, por lo que solo realiza su accion por default y se queda atrapado en la casilla.
