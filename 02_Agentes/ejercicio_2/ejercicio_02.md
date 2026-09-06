@@ -34,6 +34,13 @@ Estoy pensando en la alexa de mi casa que tiene un uso domestico y esta conectad
 - **Sensors:** microfono, reloj.
 
 #### AIMA
+
+Parcialmente observable: Puede escuchar la voz, pero solo eso, no hay semantica o algun sensor para medir el contexto en el que se le piden las cosas (comentarios ironicos).
+estocástico: Hay ruido en el ambiente por lo que una misma instruccion dada por otra persona o con mucho ruido podria ser ignorada o tener otra respuesta, 
+secuencial: Se tiene una platica secuencial donde los detalles anteriores importan(las conversaciones acumulan contexto), 
+dinámico: El usuario puede pedir más detalles o cambiar su intruccion mientras aun se trabaja en la primera instruccion.
+
+
 Parcialmente observable: el usuario puede saber si alexa entendio la solicitud y puede ver la accion resultante, pero jamas que hizo para conseguir la informacion en algunos casos ni se sabe que servicios llama.
 
 ### **2. Robot aspirador doméstico**
@@ -60,7 +67,12 @@ Estoy pensando en el sistema de netflix que te da una lista cuando abres la app.
 
 #### AIMA
 
-Secuencial: dependiendo de si el usuario toma o no las recomendaciones, el sistema podria usar esa informacion para elegir futuras recomendaciones.
+Parcialmente observable: Solo tiene acceso a lo que sus sensores le indican, no puede detectar cambios en la suciedad (nueva suciedad).
+Monoagente: Trabaja sola, a no ser que se ayude de alguna camara externa u otra entidad.
+Estocástico: El robot podria esparcir suciedad.
+Secuencial: Despues de cada accion, se determina la siguiente, si hay bateria, si una zona ya esta limpia, si la siguiente se ensucio.
+Dinámico: Siempre hay nuevas fuentes de suciedad como polvo que se acumulan de poco en poco o alguien podria ensuciar una zona ya limpiada.
+Continuo: La cantidad de suciedad o cual es mas prioritaria de limpiar conforme al tiempo disponible (bateria) no son valores fijos.
 
 ### **4. Vehículo autónomo en ciudad**
 
@@ -73,7 +85,11 @@ Un vehiculo que puede conducirse de manera autonoma pero que tiene que ser tuyo 
 
 #### AIMA
 
-Parcialmente observable: a pesar de que las camaras y sensores capturan lo que hay en el ambiente, cuando le agregas otras variables como neblina, humedad o velocidad el sistema tal vez no sea capaz de detectar cosas que en un estado mas tranquilo si podria.
+Parcialmente observable: Es imposible ver todos los elementos en la calle siempre hay zonas en reparacion, niebla o algun otro conductor haciendo movimientos impredesibles.
+Estocástico: Los cambios en el tráfico, el comportamiento de las personas, el clima y los imprevistos mecánicos son elementos que no se pueden precalcular.
+Secuencial: Cualquier acción del vehículo, como elegir un carril, avanzar o frenar, afecta directamente a su posición física futura y desgaste natural.
+Dinámico: Cada vez que el vehicula salga van a haber cambios, reglamento, señales, otros vehiculos.
+Continuo: Cuanto se gira el volante, que tanto calor hay, cuanto se acelera son valores continuos.
 
 
 ### **5. Agente de trading algorítmico en bolsa**
@@ -86,7 +102,12 @@ Una de esos apps de banco que te dicen que oportunidades hay y te envian notific
 - **Sensors:** apis, noticias, historial de precios.
 
 #### AIMA
-Secuencial: Todas las acciones anteriores afectaran a la desicion de comprar o vender despues.
+Parcialmente observable: Por mas informacion que le des, jamas se podra observar todo el mercado para tomar la mejor decision.
+
+Estocástico: Los movimientos del mercado siempre son inciertos e impredecibles.
+Secuencial: Cada accion del agente afecta las condiciones a revisar en la proxima compra (liquidez, precio etc.).
+Dinámico: El mercado de valores es rápido y cambia continuamente. El precio de un activo puede cambiar entre que lo pides para compra y la compra real de la orden.
+Continuo: Los precios de las acciones, los tipos de cambio, las tasas de interés y el tiempo y tiene valores continuos.
 
 ### **6. Sistema de diagnóstico médico asistido por IA**
 
@@ -95,14 +116,18 @@ Un aparato que recibe todos los analisis del paciente o los captura por si mismo
 - **Performance:** Número de elementos anomalos detectados,tiempo en que da resultados, costo del analisis, numero de falsos positivos y falsos negativos, precisión.
 - **Environment:** Una sala de hospital
 - **Actuators:** Generar un reporte, consumir reportes de otros analisis, solicitar mas analisis, sugerir tratamientos y mostrar alertas de salud.
-- **Sensors:** antenas receptoras, bobinas electromagnéticas y detectores fisiológicos
+- **Sensors:** antenas receptoras, bobinas electromagnéticas y detectores fisiológicos u otras herramientas medicas.
+
 
 
 #### AIMA
 
-Estático: Una vez que los sensores capturaron la informacion del paciente, la informacion de entrada no va a cambiar.
-
-
+Parcialmente observable: No se tiene acceso a todo el cuerpo de paciente, solo a unas pequeñas muestras, no se sabe su pasado o habitos.
+multi-agente: 
+Estocástico: El diagnóstico es sobre datos capturados y los resultados no son siempre certeros, sin contar que la enfermedad sigue haciendo cambios en el paciente.
+Secuencial: Hay orden definido en el que se trabaja con cada muestra.
+Dinámico: La condición paciente puede empeorar o mejorar mientras el sistema de inteligencia artificial analiza los datos,diagnostica y alerta a doctores.
+Continuo: Todos los analisis son numeros continuos, no hay ningun dato fijo.
 
 ### **7. Dron de inspección de infraestructura**
 
@@ -115,7 +140,13 @@ Estoy pensando en un dron capaz de revisar el interior y exterior de un edificio
 
 #### AIMA
 
-Dinámico: hay muchas cosas que pueden cambiar, como ligeras variaciones en el estado del edificio o el clima.
+Parcialmente observable: El dron no conoce el estado completo del edificio o donde podria haber ciertas fallas, al completar todo el chequeo tiene acceso a diferentes partes del edificio en diferentes momentos del dia o de la semana..
+
+Monoagente: Si solo hay un dron, multiagente si hay varios interactuando con el edificio.
+Estocástico: Las condiciones de la naturaleza, clima o del edificio podrian cambiar sin aviso.
+Secuencial: Cada movimiento que hace, zona que captura o problema en la construccion afecta a su siguiente accion (continuar exploracion, investigar más, avisar).
+Dinámico: las condiciones de vuelo como clima o las del dron cambian constantemente.
+Continuo: La velocidad de vuelo, altura, cantidad de daño en una pared etc. son valores continuos.
 
 
 ### **8. Agente jugador de ajedrez**
@@ -129,4 +160,9 @@ Estoy pensando en las apps de juegos en las que puedes jugar con otras personas 
 
 #### AIMA
 
-Observable: Se puede observar todas las fichas en el tablero en todo momento.
+Totalmente observable: El agente tiene acceso completo al estado del juego y a las posiciones exactas de cada ficha.
+Monoagente: eres tu contra el agente de ajedrez.
+Determinista: Se sabe cuales son todas las opciones que tiene el otro jugador en todo momento.
+Secuencial: Cada jugada cambia las siguientes (la mejor jugada, o si defender o bloquear etc.).
+Estático: Solo importa el tablero, no hay cambios en el mundo que importen.
+Discreto: Hay un numero limitado de fichas y reglas, ambos son conocidos y fijos.
