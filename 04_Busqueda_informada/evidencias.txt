@@ -1,0 +1,72 @@
+(main_venv)  ~/Documents/repos/inteligencia-artificial/Búsqueda informada/project   main ±  python 02_heuristics.py --from-city Timisoara --to Eforie
+Heuristic: Euclidean distance to Eforie (map coordinates)
+
+  h(n)  city
+      0  Eforie  <- goal
+     64  Hirsova
+    120  Urziceni
+    160  Vaslui
+    166  Bucharest
+    188  Giurgiu
+    231  Iasi
+    253  Pitesti
+    290  Neamt
+    301  Fagaras
+    309  Craiova
+    349  Rimnicu Vilcea
+    391  Sibiu
+    397  Mehadia
+    397  Drobeta
+    406  Lugoj
+    482  Timisoara  <- start
+    511  Arad
+    513  Zerind
+    513  Oradea
+(main_venv)  ~/Documents/repos/inteligencia-artificial/Búsqueda informada/project   main ±  python 03_greedy_best_first_search.py --from-city Timisoara --to Eforie
+Algorithm: Greedy best-first search
+Problem:   Timisoara → Eforie
+Heuristic: Euclidean distance to Eforie (map coordinates)
+Status:    success
+Path:      Timisoara → Lugoj → Mehadia → Drobeta → Craiova → Pitesti → Bucharest → Urziceni → Hirsova → Eforie
+Depth:     9 roads
+Cost:      884 km
+
+  city                  g     h     f
+  Timisoara                0   482   482
+  Lugoj                  111   406   517
+  Mehadia                181   397   578
+  Drobeta                256   397   653
+  Craiova                376   309   685
+  Pitesti                514   253   767
+  Bucharest              615   166   781
+  Urziceni               700   120   820
+  Hirsova                798    64   862
+  Eforie                 884     0   884
+
+Expanded:  9 nodes
+Generated: 24 nodes
+Frontier:  max size 6
+(main_venv)  ~/Documents/repos/inteligencia-artificial/Búsqueda informada/project   main ±  python 04_a_star_search.py --from-city Timisoara --to Eforie
+Algorithm: A* search
+Problem:   Timisoara → Eforie
+Heuristic: Euclidean distance to Eforie (map coordinates)
+Status:    success
+Path:      Timisoara → Arad → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest → Urziceni → Hirsova → Eforie
+Depth:     8 roads
+Cost:      805 km
+
+  city                  g     h     f
+  Timisoara                0   482   482
+  Arad                   118   511   629
+  Sibiu                  258   391   649
+  Rimnicu Vilcea         338   349   687
+  Pitesti                435   253   688
+  Bucharest              536   166   702
+  Urziceni               621   120   741
+  Hirsova                719    64   783
+  Eforie                 805     0   805
+
+Expanded:  15 nodes
+Generated: 40 nodes
+Frontier:  max size 6
+(main_venv)  ~/Documents/repos/inteligencia-artificial/Búsqueda informada/project   main ± 
