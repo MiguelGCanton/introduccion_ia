@@ -147,6 +147,7 @@ Mis resultados son extraños y variables
 En el caso de la ejecucion manuel pude observar que la red con solo dos capaz da mejores resultados que la de cuatro para la que a pesar de tener mas filtros termina con un error mayor.
 
 
-En el caso de keras, se ve un resultado completamente diferente para el caso de dos capaz y de cuatro
+En el caso de keras, se ve un resultado completamente diferente para el caso de dos capaz y de cuatro.
 
-en ambos casos la curva de error es distinta a la ejecucion manual,
+En ambos casos la curva de error es distinta a la ejecucion manual,
+La ejecucion en keras muestra claramente como agregando más capas ayuda a reducir el porcentaje de error.
