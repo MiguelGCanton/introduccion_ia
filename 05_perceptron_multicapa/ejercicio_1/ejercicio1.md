@@ -144,7 +144,7 @@ Reporte de resultados
 
 Mis resultados son extraños y variables
 
-En el caso de la ejecucion manuel pude observar que la red con solo dos capaz da mejores resultados que la de cuatro para la que a pesar de tener mas filtros termina con un error mayor.
+En el caso de la ejecucion manual pude observar que la red con solo dos capaz da mejores resultados que la de cuatro para la que a pesar de tener mas filtros termina con un error mayor.
 
 
 En el caso de keras, se ve un resultado completamente diferente para el caso de dos capaz y de cuatro.
