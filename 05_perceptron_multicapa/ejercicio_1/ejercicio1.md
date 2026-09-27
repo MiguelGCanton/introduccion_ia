@@ -142,12 +142,30 @@ Keras with four layers
 
 Reporte de resultados
 
-Mis resultados son extraños y variables
+Mis resultados son extraños y variados, estoy sorprendido de como al agregar más capas, el resultado no mejora, al buscar diferencias en la ejecucion inicial de numpy con la arquitectura original y comparandola con la ejecucion con capas extra, se puede observar como en las primera  epocas hay una perdida de error constante, pero se queda estancado (casi se aplana la grafica) hasta llegar a la epoca 100 en la cual empieza a bajar de nuevo de manera constante. En cambio con la nueva arquitectura se puede observar como un comportamiento similar en las primeras capaz, pero aqui el estancamiento no se detiene en las primeras 100 epocas, continua hasta casi las ultimas en las cuales ya se empieza a notar una caida rapida del error, pero apesar de eso, **al finalizar el entrenamiento en ambas arquitecturas, la nueva arquitectura tiene un error final mucho mayor ~0.1 en la original contra ~0.4 en la nueva.**
 
-En el caso de la ejecucion manual pude observar que la red con solo dos capaz da mejores resultados que la de cuatro para la que a pesar de tener mas filtros termina con un error mayor.
+Respecto a la ejecucion con keras, con la arquitectura original,  se puede ver un comportamiento diferente, al aumentar las capas el error disminuye de manera constante a lo largo de todas las epocas, y con la curva aplanandose antes de la epoca 100 hasta la epoca 200, pero siempre mostrando una reduccion en el error, y en el caso de la nueva arquitectura se puede observar una curva que muestra la reduccion del error de manera constante, **al finalizar el entrenamiento en ambas arquitecturas, hay un error final similar en ambas ~0.2 en la original contra ~0.23 en la nueva.**
+
+Respecto a las diferencias en la implementacion de numpy y keras, hay algunas diferencias en la implementacion que estan relacionadas con las diferencias en las curvas, la manera en que se calcula la perdida, en el caso de numpy estamos dividiendo todo entre len(x) que es 150 siempre, mientras que keras usa MeanSquaredError, que divide entre 150 multiplicado por las capas.
+
+Tambien hay que mencionar que numpy usa valores entre 0 y 1 mientras que keras usa GlorotUniform.
 
 
-En el caso de keras, se ve un resultado completamente diferente para el caso de dos capaz y de cuatro.
+Debido a **Desvanecimiento del gradiente** se puede ver como la red con la nueva arquitectura, tiene mas problemas para aprender, ya que al apilar cuatro capas y multiplicar cada una por un numero decimal (.25) el valor se va reduciendo hasta ser casi imperceptible.
 
-En ambos casos la curva de error es distinta a la ejecucion manual,
-La ejecucion en keras muestra claramente como agregando más capas ayuda a reducir el porcentaje de error.
+Simplicidad de Iris: Son solo 150 muestras y 4 variables; una sola capa oculta es suficiente. Dos capas extra añaden cuellos de botella saturados que impiden el paso de información.
+
+
+
+### Evidencias Gráficas
+
+#### Implementación Manual (NumPy)
+![Curva Original](fotos_perceptron/original_4_3_3.png)
+![Curva Profunda](fotos_perceptron/resultado_4_3_3_3_3.png)
+
+#### Implementación Keras
+![Keras Original](fotos_perceptron/keras_loss_original.png)
+![Keras Profunda](fotos_perceptron/keras_loss_4_3_3_3_3.png)
+
+#### Entorno Google Colab
+![Ejecución Colab](fotos_perceptron/ejecucion_original.png)
