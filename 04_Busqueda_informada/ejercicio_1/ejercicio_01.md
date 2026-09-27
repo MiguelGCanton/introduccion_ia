@@ -33,4 +33,12 @@ Greedy inicia en Timisoara, ve sus opciones, Arad que tiene un h mayor (511)  y 
 
 En cambio A* desarrolla varios caminos considerando el camino ya recorrido y la heuristica y conforme se va a expandiendo considera todas las rutas posibles por lo que logra una solucion mejor (optima).
 
-La euristica fue el de distancia euclideana en ambos casos.
+La heuristica fue el de distancia euclideana en ambos casos.
+
+### Diagramas de Búsqueda y Rutas
+
+#### Árbol de Expansión Greedy Best-First Search
+![Ruta Greedy](../greedy.png)
+
+#### Árbol de Expansión A* Search
+![Ruta A*](../a_.drawio.png)
