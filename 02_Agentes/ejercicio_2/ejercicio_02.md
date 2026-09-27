@@ -53,20 +53,6 @@ Me imagino la clasica aspiradora que recorre cada parte de la habitacion.
 - **Sensors:** sensor de suciedad, sensor para detectar el espacio de una habitacion.
 
 #### AIMA
-
-Secuencial: el robot determina las areas para limpiar y las acciones anteriores (zonas que limpio anteriormente) afectaran las siguientes areas para limpiar.
-
-### **3. Sistema de recomendación de streaming**
-
-Estoy pensando en el sistema de netflix que te da una lista cuando abres la app.
-
-- **Performance:** Cantidad de peliculas recomendadas, que tanto son elegidas las peliculas que recomienda, si las que recomendo fueron disfrutadas por el usuario.
-- **Environment:** Cualquier hardware en el que se pueda ejecutar.
-- **Actuators:** Todos los dispositivos que se puedan conectar con internet de las cosas, apis y otros servicios registrados.
-- **Sensors:** Historial de peliculas del usuario, intereses registrados por el usuario, data de usuarios similares.
-
-#### AIMA
-
 Parcialmente observable: Solo tiene acceso a lo que sus sensores le indican, no puede detectar cambios en la suciedad (nueva suciedad).
 Monoagente: Trabaja sola, a no ser que se ayude de alguna camara externa u otra entidad.
 Estocástico: El robot podria esparcir suciedad.
@@ -74,13 +60,44 @@ Secuencial: Despues de cada accion, se determina la siguiente, si hay bateria, s
 Dinámico: Siempre hay nuevas fuentes de suciedad como polvo que se acumulan de poco en poco o alguien podria ensuciar una zona ya limpiada.
 Continuo: La cantidad de suciedad o cual es mas prioritaria de limpiar conforme al tiempo disponible (bateria) no son valores fijos.
 
+
+### **3. Sistema de recomendación de streaming**
+
+Estoy pensando en el sistema de netflix que te da una lista cuando abres la app.
+
+- **Performance:** Cantidad de peliculas recomendadas, que tanto son elegidas las peliculas que recomienda, si las que recomendo fueron disfrutadas por el usuario.
+- **Environment:** Cualquier hardware en el que se pueda ejecutar, computadoras, navegadores web, celulares o tabletas.
+- **Actuators:**  Interfaz gráfica de usuario, renderizado de listas, carruseles personalizados, banners dinámicos (todo lo que la web pueda generar de manera dinamica), 
+- **Sensors:** Historial de peliculas del usuario, intereses registrados por el usuario, data de usuarios similares.
+
+Parcialmente observable:
+
+El sistema solo conoce el comportamiento observable del usuario dentro de la plataforma (reproducciones, pausas, clics, valoraciones, búsquedas, hora de conexión y cualquier otra informacion que el usuario haya dejado o la plataforma adquirido). No puede conocer el estado mental completo del usuario, su estado de ánimo real, si está prestando atención a la pantalla o si está usando la cuenta junto a otra persona en ese instante.
+
+Multiagente:
+varios agentes recopilan informacion de distintos usuarios e intentan encontrar relaciones entre las series vistas por esos usuarios para recomendar a otros usuarios.
+
+Estocástico:
+El contenido recomendado no garantiza que el sistema sea correcto, siempre puede recomendar contenido que el usuario odie o aburra.
+
+Secuencial:
+
+Conforme el usuario va utilizando la plataforma, el sistema puede ir aprendiendo y mejorar sus predicciones, siendo que al principio solo se le muestren recomendaciones generales para todos los usuarios o directamente se le pregunte que generos le gustan o que peliculas son sus favoritas y despues de que el usuario haya consumido una cantidad de tiempo considerable, la plataforma tenga informacion para recomendar basandose en su historial.
+
+Dinámico:
+La plataforma tiene contenido dinamico (se agregan o quitan peliculas o cambian su modelo de negocios para incluir videojuegos) por lo que constantemente hay que estar reevaluando las recomendaciones, igual hay que considerar que los gustos de usuario pueden cambiar.
+
+
+Continuo:
+Valores como el tiempo de reproduccion, tiempo transcurrido, las funciones de probabilidad que determinan si se va a disfrutar cierto contenido son continuos.
+
 ### **4. Vehículo autónomo en ciudad**
 
 Un vehiculo que puede conducirse de manera autonoma pero que tiene que ser tuyo como en el caso de tesla (no como es el waymo que se renta y tiene servicios para contactar a una persona si tienes problemas con el vehiculo)
 
 - **Performance:** número de accidentes, velocidad, tiempo de reaccion ante eventos, tiempo que permanece en la ruta, en el contexto de los autos de bateria y que ejecutar una inteligencia artificial requiere energia, la bateria podria ser un factor, cualquier ley. 
 - **Environment:** una ciudad, un sendero en el monte, el estacionamiento de algun lugar o dentro de una casa (porch).
-- **Actuators:** volante, freno, camaras, microfonos, gps, luces.
+- **Actuators:** volante, freno, camaras y luces intermitentes, claxon y caja de velocidades.
 - **Sensors:** camaras, microfono, gps, sensores de temperatura.
 
 #### AIMA
@@ -123,7 +140,6 @@ Un aparato que recibe todos los analisis del paciente o los captura por si mismo
 #### AIMA
 
 Parcialmente observable: No se tiene acceso a todo el cuerpo de paciente, solo a unas pequeñas muestras, no se sabe su pasado o habitos.
-multi-agente: 
 Estocástico: El diagnóstico es sobre datos capturados y los resultados no son siempre certeros, sin contar que la enfermedad sigue haciendo cambios en el paciente.
 Secuencial: Hay orden definido en el que se trabaja con cada muestra.
 Dinámico: La condición paciente puede empeorar o mejorar mientras el sistema de inteligencia artificial analiza los datos,diagnostica y alerta a doctores.
