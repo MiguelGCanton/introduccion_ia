@@ -100,3 +100,16 @@ se puede apreciar como k=5 distribuye mejor las distancias
 Eso significa que hay dos nubes que se encuentran muy cerca y al aumentar k, la inercia apenas cambia, siempre puedo **alejar los centros** para que al haber más distancia, se puedan notar más los cambios en la inercia o **usar un blob_std más pequeño** para que se dispersen menos y esten mucho más cerca del centroide.
 
 ---
+## 3. Registro de Figuras Solicitadas (Original vs Modificado)
+
+### 3.1 Datos Originales (Géron)
+![Blobs Originales](evidencias/blob_original.png)
+![Método del Codo Original](evidencias/codo_original.png)
+![Diagrama de Voronoi Original](evidencias/voronoi_original.png)
+![Análisis de Silueta Original](evidencias/silueta_original.png)
+
+### 3.2 Datos Modificados (Blobs Separados)
+![Blobs Modificados](evidencias/blob_modificado.png)
+![Método del Codo Modificado](evidencias/codo_modificado.png)
+![Diagrama de Voronoi Modificado](evidencias/voronoi_modificado.png)
+![Análisis de Silueta Modificado](evidencias/silueta_modificado.png)
