@@ -19,3 +19,21 @@ En la carpeta de evidencias incluyo varias screenshots de las ejecuciones en col
 notebook colab:
 
 https://colab.research.google.com/drive/1aUdBXiz60V_Emp2jyBHFC81d-Vaiq0Q2?usp=sharing
+
+### Evidencias de Ejecución
+
+#### 1. Detecciones Estándar (Zidane y CLI)
+![Zidane](evidencias/Captura%20de%20pantalla_zidane.png)
+![Ejecución CLI](evidencias/yolo_ejecutado_imagen.png)
+
+#### 2. Imágenes Propias (Animales y Bolso)
+![Animales YOLO](evidencias/animales_yolo.jpeg)
+![Bolso](evidencias/bolso.png)
+
+#### 3. Experimento de Threshold (Perrito Bailarín)
+![Perrito con Threshold](evidencias/Captura%20de%20pantalla_perrito_bailarin.png)
+![Perrito Comparativa](evidencias/Captura%20de%20pantalla_perrito_bailarin_2.png)
+![Perrito detectado como persona](evidencias/perrito_detectado_como_persona.png)
+
+#### 4. Entorno Google Colab
+![Notebook Ejecutada](evidencias/notebook_ejecutada_correctamente.png)
