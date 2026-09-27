@@ -23,8 +23,8 @@ Para cada una indica:
 
 2. **Nombre:** GitHub Copilot
    **Uso:** <br>
-   - Documentar, modificar codigo, crear pruebas, evitar leer la documentacion etc.
+   - Asistencia en desarrollo de software: autocompletado predictivo de código contextual, generación de pruebas unitarias basadas en firmas de métodos y refactorización guiada.
 
 3. **Nombre:** [Poe](https://poe.com)<br>
     
-   **Uso:** Permite realizar la misma pregunta a varios llms, no es la gran cosa pero fue divertido usarlo.
+   **Uso:** Permite realizar la misma pregunta a varios llms para realizar evaluaciones comparativas de las respuestas que varios llms dan a una misma pregunta, no es la gran cosa pero fue divertido usarlo.
