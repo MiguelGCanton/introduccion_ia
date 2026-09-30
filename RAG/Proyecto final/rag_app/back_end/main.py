@@ -1,4 +1,5 @@
 
+from pydantic import json_schema
 import os
 from contextlib import asynccontextmanager
 
@@ -6,10 +7,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from models import *
-# from app.chunk import chunk_text, read_file_content
-# from app.embed import get_embeddings
-# from app.store import add_chunks, query_similar, get_collection_count, reset_chromadb
-# from app.generate import generate_answer
+from embed import get_embeddings
+from store import add_chunks
 
 
 load_dotenv()
@@ -58,3 +57,16 @@ def health():
         chroma_accessible=chroma_ok,
         indexed_chunks=count,
     )
+
+@app.post("/ingest", response_model=IngestResponse, tags=["Sistema"]) 
+def ingest(texts: list[str]):
+    embeddings = get_embeddings(texts)
+
+    add_chunks(embeddings, texts, "test_document.txt")
+        
+    return {
+        "embed": embeddings,
+        "chunks": len(embeddings),
+        "message": "Embeddings generados exitosamente",
+        "ids": [f"chunk_{i}" for i in range(len(embeddings))],
+    }
