@@ -24,7 +24,7 @@ Para este proyecto utilicé gemini 3.8 flash para generar toda la informacion ne
 
 ## 2. Estrategia de partición (Chunking) y justificación
 
-- **Configuración:** Tamaño de fragmento (`chunk_size`) de **300 palabras** con un solape (`overlap`) de **60 palabras** (20% de solape).
+- **Configuración:** Tamaño de fragmento (`chunk_size`) de **300 palabras** con un solape (`overlap`) de **60 palabras** (20% de solape), para el proyecto se usaron 32 chunks.
 - **Justificación técnica:**
 
   Experimentando un poco, me di cuenta que menos de 100 era muy poco para contestar preguntas variadas y para conseguir una respuesta adecuada, ademas al tener que aplicar un translape de al menos un 20% los chunks quedaban demasiado pequeños entonces si encuentra la pregunta, pero no contiene informacion suficiente para realmente resolver la duda.
