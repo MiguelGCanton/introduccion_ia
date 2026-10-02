@@ -1,0 +1,27 @@
+# Entorno virtual
+venv/
+.venv/
+
+# Variables de entorno (contiene GOOGLE_API_KEY)
+.env
+
+# Persistencia ChromaDB
+chroma/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

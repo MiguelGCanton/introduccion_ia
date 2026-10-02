@@ -47,5 +47,5 @@ def get_embeddings(texts: list[str]) -> list[list[float]]:
         )
         for embedding in response.embeddings:
             all_embeddings.append(embedding.values)
-
+    print(f"number of embedings: {len(all_embeddings)}")
     return all_embeddings
