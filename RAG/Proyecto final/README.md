@@ -4,6 +4,23 @@
 
 ---
 
+## ⚡ Inicio Rápido (Cómo Ejecutar el Proyecto)
+
+Para correr el sistema completo se requieren **dos terminales** abiertas en la raíz del proyecto (`Proyecto final`) con el entorno virtual activado:
+
+```bash
+# Terminal 1: Iniciar API Backend (FastAPI)
+uvicorn main:app --reload --app-dir "rag_app/back_end" --port 8000
+
+# Terminal 2: Iniciar Interfaz de Usuario (Streamlit)
+streamlit run rag_app/ui/streamlint_app.py
+```
+
+- **Frontend (Streamlit):** [http://localhost:8501](http://localhost:8501)
+- **API Docs (Swagger UI):** [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
 ## 📖 Descripción del Proyecto
 
 Este proyecto implementa un sistema completo de **Generación Aumentada por Recuperación (RAG)** siguiendo una arquitectura desacoplada en tres capas:

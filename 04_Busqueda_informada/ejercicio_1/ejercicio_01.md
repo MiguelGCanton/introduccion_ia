@@ -21,7 +21,7 @@
 
 
 
-En tu reporte queda claro:
+Preguntas a responder
 si Greedy y A* devolvieron el mismo camino o no, y por qué;
 qué heurística se usó (tabla AIMA vs. euclidiana);
 en al menos un punto de decisión, cómo h(n) (Greedy) frente a f(n) = g(n) + h(n) (A*) explica la ciudad que cada algoritmo expandió.
